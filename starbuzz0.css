@@ -1,0 +1,10 @@
+p, em {
+	background-color: yellow;
+	border: 1px inset gray;
+	padding: 5px;
+	border-top-left-radius: 10px;
+	}
+#cool {
+	color: blue;
+	font-weight: bold;
+}
