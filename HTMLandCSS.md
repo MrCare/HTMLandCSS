@@ -1,6 +1,8 @@
 # HTML & CSS
 
-前端技术千变万化，想要寻根溯源需要从最古老的事情开始，今日Twiter的设计理念如同古希腊的莎草纸，苹果系列总体的设计灵感也可从初代苹果电脑中略见一二，想要透彻了解一块技术，一定要踏踏实实地从头开始，学力学要从数学开始，学机器学习要从统计学开始，在我持续的学习生涯中领悟最深的道理就是踏踏实实从0开始才是捷径。前端技术的源头就在HTML&CSS
+前端技术多而杂，需要逐步点满技能树。在我粗浅的认识中，最深信不疑的原则就是如果想深刻掌握某一门知识，就一定要踏踏实实从零开始。碎片化的学习更适合查缺补漏而不是开天辟地。
+
+前端技术的零就是HTML&CSS
 
 学习书籍：《Head First HTML & CSS》
 
@@ -1002,7 +1004,11 @@ body {
 
 - 浏览器本身会维护一个默认样式
 
+
+
 最优先的是作者样式，然后是读者样式，最后才是浏览器默认样式
+
+
 
 层叠的作用：让浏览器确定某个元素的样式
 
@@ -1016,9 +1022,9 @@ body {
     
     1. 作者
     
-    2- 用户
+    2. 用户
     
-    3- 浏览器默认
+    3. 浏览器默认
   
   - 现在按特定性对所有规则排序
     
@@ -1066,6 +1072,8 @@ body {
    
    - 会浮动到右边，还有left值，这样就只能浮动到左边
 
+
+
 浏览器如何处理浮动元素：
 
 1. 浏览器正常地将元素流入页面，从文件最上面开始，逐步移向末尾的元素
@@ -1076,9 +1084,11 @@ body {
 
 4. 对于内联元素定位时它们会考虑浮动元素的边界，因此会围绕着浮动元素
 
-5. 可以使用元素的CSS clear属性来提出请求：当元素流入页面时，紫这个元素左边，右边，或两边不允许有浮动内容
+5. 可以使用元素的CSS clear属性来提出请求：当元素流入页面时，在这个元素左边，右边，或两边不允许有浮动内容
 
-注意：
+
+
+**注意：**
 
 - 不可以浮动到中间
 
@@ -1134,7 +1144,7 @@ body {
 
 #### 绝对定位：
 
-- 一个元素绝对定位时，浏览器首先要做的是将它从流中完全删除，然后浏览器将这个元素放置在top和right属性指定的位置上（也可以用bottom和left或它们的组合），分别代表距浏览器页面的某个边的距离。
+- 一个元素绝对定位时，浏览器首先要做的是将它从流中完全删除，然后浏览器将这个元素放置在 top 和 right 属性指定的位置上（也可以用bottom和left或它们的组合），分别代表距浏览器页面的某个边的距离。
 
 - 定位元素有一个 z-index 属性，这会指定它在一个虚拟z轴上的位置（上面的元素更靠近你，值更大）
 
@@ -1189,7 +1199,7 @@ body {
 
 ```html
 <!--
-    1. 构建整个表格的结构
+    1. 构建整个表格的结构
 -->
 
 <div id="tableContainer1x2">
@@ -1282,26 +1292,26 @@ div#content1x2 {
 
 | Browser                 | 容器格式             | 数据格式                  |
 | ----------------------- | ---------------- | --------------------- |
-| Safari &  IOS           | .MP4             | H.264视频和AAC音频         |
+| Safari &  IOS           | .MP4             | H.264视频和AAC音频         |
 | Google Chrome & Android | .WebM            | VP8视频和Vorbis音频        |
 | Firefox or Opera        | 总格式.ogv；容器格式.ogg | Theora视频（开源）和Vorbis音频 |
 
 ```html
 <!--
-    1. 有controls会提供控件
-    2. 有autoplay会自动播放
-    3. 页面中视频的宽度和高度
-    4. 视频的源位置
-    5. 提供一个可选的海报图像，视频未播放时显示
-    6. 可以增加id
+    1. 有controls会提供控件
+    2. 有autoplay会自动播放
+    3. 页面中视频的宽度和高度
+    4. 视频的源位置
+    5. 提供一个可选的海报图像，视频未播放时显示
+    6. 可以增加id
 -->
 
 <video controls
-       autoplay
-       width="512" height="288"
-       src="video.mp4"
-       poster="images.png"
-       id="video">
+       autoplay
+       width="512" height="288"
+       src="video.mp4"
+       poster="images.png"
+       id="video">
 </video>
 ```
 
@@ -1321,16 +1331,16 @@ div#content1x2 {
 
 ```html
 <!--
-    1. 对于每个source元素，浏览器会加载视频文件的元数据，查看能不能播放这个视频
-    2. 如果没有符合的格式，浏览器就会显示下面这些文本
-    3. 这样性能不佳，可以更具体的制定格式，换取更优的性能
+    1. 对于每个source元素，浏览器会加载视频文件的元数据，查看能不能播放这个视频
+    2. 如果没有符合的格式，浏览器就会显示下面这些文本
+    3. 这样性能不佳，可以更具体的制定格式，换取更优的性能
 -->
 
 <video controls autoplay width="512" height="288">
-    <source src="video.mp4">
-    <source src="video.webm">
-    <source src="video.ogv">
-    <p>Sorry, your browser doesn't support the video element</p>
+    <source src="video.mp4">
+    <source src="video.webm">
+    <source src="video.ogv">
+    <p>Sorry, your browser doesn't support the video element</p>
 </video>
 ```
 
@@ -1346,5 +1356,529 @@ div#content1x2 {
 
 ```css
 <source src="video.ogv"
-        type='video/ogg; codecs="theora, vorbis"'>
+        type='video/ogg; codecs="theora, vorbis"'> 
 ```
+
+## 建立表格
+
+表格结构：共需要四个元素
+
+```html
+<table>
+    <caption>A title</caption>
+    <tr>
+        <th></th>
+        ...
+    </tr>
+    <tr>
+        <td></td>
+        ...
+    </tr>
+</table>
+```
+
+- table：table总体
+
+- tr：table row
+
+- th：table head
+
+- td：table data
+
+增加一个标题：
+
+- caption：标题，说明文字，字幕
+
+CSS格式：
+
+```css
+table {
+    margin-left: 20px;
+    margin-right: 20px;
+    border: thin solid black;
+    caption-side: bottom; /*put the caption at bottom*/
+}
+th, td {
+    border: thin dotted gray;
+    padding: 5px;
+}
+caption {
+    font-style: italic;
+    padding-top: 8px;
+}
+```
+
+注意：
+
+- 表格单元格有padding和border，然而取代margin的是border-spacing，这是针对整个表格定义的，不能单独设置表格的外边距，而要对整个表格设置一个间距
+
+- 可以用`border-spacing: 10px 30px;`设置水平单元格的间距和竖直单元格的间距
+
+- 用`border-collapse: collapse;`让边框间距消失，并且只剩一个边框
+
+一种高级的为表格隔行增加颜色的方法：
+
+- nth-child伪类，状态是一个元素相对于它的兄弟元素的数字顺序
+
+```css
+p:nth-child(even) {
+    background: red; /*the even paragraphs' background color will be red*/
+}
+p:nth-child(2n) {
+    background: red; /*same as the upper one*/
+}
+p:nthchild(odd) {
+    background: green; /*the odd paragraph' background color will be green*/
+}
+p:nth-child(2n+1) {
+    background: green; /*same as the upper one*/
+}
+```
+
+**边角知识：**
+
+让单元格实现跨行和跨列：
+
+- `<td rowspan="2">`
+
+- `<td colspan="2">`
+
+为列表`<li>`增加样式
+
+```css
+/*
+    @. <ul>无序列表
+    1. 修改默认的列表标记
+    2. 定义自己的列表标记
+    @. <ol>有序列表
+    1. 修改默认的列表标记
+    2. 控制文本围绕
+*/
+
+li {
+    list-style-type: disc;   /*列表标记：实心圆形*/
+    list-style-type: circle; /*列表标记：空心圆形*/
+    list-style-type: square; /*列表标记：实心矩形*/
+    list-style-type: none;   /*列表标记：无     */
+}
+
+li {
+    list-style-type: url(img/backpack.png)
+    padding-top: 5px;
+    margin-left: 20px;
+}
+
+li {
+     list-style-type: decimal;     /*列表标记：十进制数*/
+     list-style-type: upper-alpha; /*列表标记：大写字母*/
+     list-style-type: lower-alpha; /*列表标记：小写字母*/
+     list-style-type: upper-roman; /*列表标记：大写罗马*/
+}
+
+li {
+    list-style-position: inside;   /*标记在文本盒子内*/
+    list-style-position: outside;  /*标记在文本盒子外*/
+}
+```
+
+- text-align：有 left center right 三个属性
+
+- vertical-align：有 top center bottom 三个属性
+
+两者控制的方向不同
+
+## 实现交互
+
+### `<from>`元素
+
+- 包含构成表单的所有元素
+
+- 告诉浏览器当你提交表单时要把表单数据发送到哪里 action
+
+- 浏览器用什么方法发送数据 method
+
+```html
+<from action="http://wickedlysmart.com/hfhtmlcss/contest.php"
+      method="POST">
+    <input type="text" name="fullname">
+    <input type="submit">
+    ...
+</from>
+```
+
+### `<from>`里面可以有什么
+
+#### `<input>`元素
+
+文件输入：
+
+- `<input type="file" name="doc">`
+
+- input 是一个 void 元素
+
+- 这会弹出一个选择文件的按钮
+
+文本输入：
+
+- `<input type="text" name="fullname" placeholder="CheziJin" required>`
+
+- placeholder 属性允许你提供一个提示，使用户了解你希望表单的这一部分需要怎样的内容
+
+- 布尔属性 required 必须输入内容才可以提交
+
+提交输入：
+
+- `<input type="submit">`
+- `<input type="submit" value="Order Now">` 这样可以改变提交按钮的默认的文本
+
+单选钮输入：
+
+- `<input type="radio" name="hotornot" value="hot">`
+
+- `<input type="radio" name="hotornot" value="not" checked>`
+
+- 如果增加一个布尔属性 checked 浏览器显示表单的时候就会默认选中这个元素
+
+- 用`<label>`元素添加标签，提高可访问性
+
+- ```html
+  <input type="radio" name="hotornot" value="hot" id="option1">
+  <label for="option1">热</label>
+  ```
+
+复选框输入：
+
+- `<input type="checkbox" name="spice" value="Salt">`
+
+- `<input type="checkbox" name="spice" value="Pepper">`
+
+- `<input type="checkbox" name="spice" value="Garlic">`
+
+- 与 radio 不同，checkbox 允许一组选项中选择任意选项
+
+#### HTML5新增类型
+
+数字输入：
+
+- `<input type="number" min="0" max="20">`
+
+- 限制只能输入数字，可以用可选属性指定这个元素允许的最小数和最大数
+
+范围输入：
+
+- `<input type="range" min="0" max="20" step="5">`
+
+- 会显示一个滑动条
+
+颜色输入：
+
+- `<input type="color">`
+
+- 可以制定一个颜色，会弹出颜色选择器
+
+日期输入：
+
+- `<input type="date">`
+
+- 可以利用一个日期选择控件指定日期
+
+email 输入：
+
+- `<input type="email">`
+
+- 在移动浏览器上会得到一个方便email输入的定制键盘
+
+tel 输入：
+
+- `<input type="tel">`
+
+- 在移动设备上弹出定制键盘
+
+url 输入：
+
+- `<input type="url">`
+
+- 在移动设备上弹出定制键盘
+
+#### 其他元素
+
+文本区：
+
+- `<textarea name="comments" rows="10" cols="48">初始文本</textarea>`
+
+- 非 void 元素
+
+- name属性为元素指定一个唯一的名字
+
+- rows属性告诉浏览器文本区高度为多少字符高
+
+- cols属性告诉浏览器文本区宽度为多少字符宽
+
+菜单控件：
+
+- ```html
+  <select name="characters" multiple>
+      <option value="option1">xxxx1</option>
+      <option value="option2">xxxx2</option>
+      <option value="option3">xxxx3</option>
+  </select>
+  ```
+
+- select 元素包围所有菜单选项，把它们组合为一个菜单
+
+- 要用 name 为 select 元素指定一个唯一的名字
+
+- 打包返回的是 option 的 value 和 select 的 name
+
+- 如果去掉布尔属性 multiple 就是单选菜单，否则是
+
+#### 表单元素工作原理：
+
+提交表单时，浏览器会按照各个元素的唯一 name 打包数据，以 `name = value`  的形式发送到服务器脚本
+
+- 对于text input或 textarea 中能够输入多少文本，浏览器确实有一个限制，不过这个限制很大，一般不会达到限制极限，但是可以用`maxlength="100"`属性为其制定最大字符数
+
+浏览器发送数据的方法：
+
+- POST：
+  
+  - 所有表单数据会作为请求的一部分发送，对用户是不可见的
+  
+  - 用户在浏览器地址栏里只能看到服务器脚本的URL
+  
+  - 不能对返回页面加书签
+  
+  - 有安全性需求的时候
+  
+  - 发送大量数据时用POST（textarea的输入）
+
+- GET：
+  
+  - 表单数据会追加到URL最后，所有用户可以看到表单数据
+  
+  - 如果用户希望能对提交表单后的结果页面加书签，就必须用GET：比如搜索结果的列表
+
+#### `<fieldset> <legend>`元素：
+
+会创建一个框和标签将一部分交互控件围起来：
+
+- password 类型的 input 会采用密文输入形式
+
+```html
+<fieldset>
+    <legend>一个小标题</legend>
+        <input type="password" name="secret">
+        <input type="submit">
+</fieldset>
+```
+
+## 十大主题
+
+### 1. 更多 CSS 选择器
+
+- 伪元素（Pseudo-element）：
+  
+  - 可以用来选择元素的某些部分，这些部分可能不便于包围在 div 和 span 中，也不便用其他方式选择。例如：`first-letter` 选择块元素的第一个字母`first-line`选择段落第一行：
+
+```css
+/*
+    @. 将段落的第一个字母放大，另外把第一行设置为斜体
+*/
+
+p:first-letter {
+    font-size: 3em;
+}
+
+p:first-line {
+    font-style: italic;
+}
+```
+
+- 属性选择器：
+  
+  - 根据属性值来选择元素
+
+```css
+/*
+    1. 选择HTML中所有包含一个width属性的图像
+    2. 选择height属性值为300的所有图像
+    3. 选择alt属性包含单词“flower”的所有图像
+*/
+
+img[width] {border: black thin solid;}
+img[height="300"] {border: black thin solid;}
+img[alt~="flower"] {border: #fff thin solid;}
+```
+
+- 按兄弟选择：
+
+```css
+/*
+    @. 这个元素会选择所有紧跟在一个 h1 元素后面的段落
+*/
+
+h1+p {
+    font-style: italic;
+}
+```
+
+- 结合选择器：
+  
+  - 可以把一个类选择器用作子孙选择器的一部分
+  
+  - 一般需要先定义上下文，再选择目标元素
+
+```css
+.bluberry p {
+    color: purple;
+}
+div#greentea > blockquote p:first-line {
+    font-style: italic;
+}
+```
+
+### 2. 开发商特定的 CSS 属性
+
+浏览器制造商通常会为他们的浏览器增加新的功能来测试新特性，或者实现一直在考虑但还没有得到标准组织批准的CSS扩展，在这些情况下，开发商会创建类似这样的CSS属性：
+
+- `-moz-transform` 开发商是Mozilla
+
+```css
+div {
+    transform: rotate(45deg);           /*必须列出通用属性以保证属性得到支持，或者至少将来得到支持*/
+    -webkit-transform: rotate(45deg);   /*safari chrome*/
+    -moz-transform:rotate(45deg);       /*mozilla*/
+    -o-transform:rotate(45deg);         /*opera*/
+    -ms-transform:rotate(45deg);        /*IE*/
+}
+```
+
+### 3. CSS 变换和过渡
+
+会让鼠标悬停在一个小方块上的时候，小方块用2s顺时针旋转45度，离开时再逆时针转动到原位
+
+```css
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CSS Transforms and Transitions</title>
+	<style>
+		#box {
+			position: absolute;
+			top: 100px;
+			left: 100px;
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			transition: transform 2s;
+			-webkit-transition: -webkit-transform 2s;
+			-moz-transition: -moz-transform 2s;
+			-o-transition: -o-transform 2s;
+			/* no IE support for transition until possibly IE 10 */
+		}
+		#box:hover {
+			transform: rotate(45deg);
+			-webkit-transform: rotate(45deg); /* Safari, Chrome, mobile Safari, and Android */
+			-moz-transform: rotate(45deg); /* Firefox */
+			-o-transform: rotate(45deg); /* Opera */
+			-ms-transform: rotate(45deg); /* IE 9 */
+		}
+	</style>
+</head>
+<body>
+	<div id="box"> 
+	</div>
+</body>
+</html>
+```
+
+### 4. 交互性
+
+`<script>`元素与JavaScript的神奇魔力
+
+### 5. HTML5 API 和 Web 应用
+
+- 采用新方法与页面交互：同时适用于桌面和移动设备
+
+- 使用Web工作线程可以提高JavaScript代码的效率，完成一些复杂的计算，或者使应用更具有响应性，可以更好的利用用户的多核处理器
+
+- 使用浏览器储存在本地的缓存数据，提高移动应用的速度
+
+- 将页面与google maps集成
+
+- 使用HTML和JS创建自己的视频回放控件
+
+### 6. Web 字体
+
+- [Google Web Fonts](http://www.google.com/webfonts)
+
+- [Fonts.com](http://www.fonts.com/web-fonts)
+
+- [Extensis](http://www.extensis.com/)
+
+`@font-face`规则
+
+### 7. 创建 Web 页面的工具
+
+工具特性：
+
+- 一个“代码”窗口，可以输入HTML和CSS，这个窗口会提供语法检查来捕获常见错误，并在你输入代码时提供常用名和属性建议
+
+- 一个预览发布功能，允许测试页面
+
+- 一个网站管理器，允许组织网站，还可以保持你本地修改与服务器上的网站同步。它会为你完成所有FTP工作
+
+- 内置验证页面语法
+
+| 工具                       | 开发者                |
+|:------------------------:|:------------------:|
+| Dreamweaver              | Adobe              |
+| Hype                     | Tumult             |
+| Coda                     | Panic              |
+| Microsoft Expression Web | MS                 |
+| Flux                     | The Escapers       |
+| Amaya                    | W3C 开源             |
+| Eclipse                  | Eclipse Foundation |
+
+### 8. XHTML5
+
+- SVG（Scable Vector Graphics）
+
+- XML 的所有元素必须是良构的，即使是 void 元素也要有`<img src='.png' />`这样的`/`结尾，并且要结束所有元素，用引号包围属性值，合法嵌套元素等
+
+### 9. 服务器端脚本
+
+- `Linux`基础将会排上用场
+
+- 脚本语言 Python；JS
+
+### 10. 音频
+
+- `<audio>`可以在页面中播放音频，无需使用插件
+
+```html
+<audio src="song.mp3" id="noobox" controls>
+    Sorry but audio is not supported in your browser.
+</audio>
+```
+
+- 音频支持的功能与视频类似
+
+
+
+
+
+## 总结
+
+- 最重要的就是Box模型 Flow模型 Cascading的含义 Selectors的选择原则，其次是伪类等基本概念及一些基本结构体，最后是整本书都在灌输的高扩展性的设计理念
+
+- 《Head First HTML&CSS》这本书豆瓣评分9+，逻辑环环相扣，三个案例贯穿始终，将整个脉络捋顺得很清晰，虽然只有基础的必要的概念，没有很高深莫测的用法，但是对于读者吸收和把握概念是非常有利的。很幸运能读到这样一系列好书
+
+- 大概用了半个月时间读了两遍，考虑到这本书的优质的结构和极强的可读性，再加上我有充足的可自由支配的时间，这个速度实属缓慢，与十一长假的怠惰和短暂的“宽于自律”有很大关系
+
+- 好在读完这本书并伴随着从焦虑的找工作任务中得到了解放，我找到了一点状态
+
+- 人生天地间，忽如他乡客，他乡他乡，何处是故乡？开卷见故乡
+
+
