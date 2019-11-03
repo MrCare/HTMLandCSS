@@ -1004,11 +1004,7 @@ body {
 
 - 浏览器本身会维护一个默认样式
 
-
-
 最优先的是作者样式，然后是读者样式，最后才是浏览器默认样式
-
-
 
 层叠的作用：让浏览器确定某个元素的样式
 
@@ -1072,8 +1068,6 @@ body {
    
    - 会浮动到右边，还有left值，这样就只能浮动到左边
 
-
-
 浏览器如何处理浮动元素：
 
 1. 浏览器正常地将元素流入页面，从文件最上面开始，逐步移向末尾的元素
@@ -1085,8 +1079,6 @@ body {
 4. 对于内联元素定位时它们会考虑浮动元素的边界，因此会围绕着浮动元素
 
 5. 可以使用元素的CSS clear属性来提出请求：当元素流入页面时，在这个元素左边，右边，或两边不允许有浮动内容
-
-
 
 **注意：**
 
@@ -1177,11 +1169,11 @@ body {
   
   - static 元素放在流中，自动定位
   
-  - absolute 元素从流中删除，在页面中，绝对位置
+  - absolute 元素从流中删除，在页面中，通过 top,bottom,left,right 定位。选取其最近一个最有定位设置的父级对象进行绝对定位，如果对象的父级没有设置定位属性，absolute元素将以body坐标原点进行定位
   
   - fixed 元素从流中删除，在窗口的绝对位置
   
-  - relative 让元素正常流入页面，不过在页面显示之前要进行偏移
+  - relative 让元素正常流入页面，不过在页面显示之前要进行偏移，相对于元素自身在流中的位置偏移
 
 - 指定元素位置：如果用百分数指定，会按照所在父元素的宽度百分比计算位置
 
@@ -1630,7 +1622,23 @@ url 输入：
 
 - 打包返回的是 option 的 value 和 select 的 name
 
-- 如果去掉布尔属性 multiple 就是单选菜单，否则是
+- 如果去掉布尔属性 multiple 就是单选菜单，否则是多选菜单
+
+#### 测试区
+
+**用Chrome访问本页可支持相应效果**
+
+1. 文件窗口：<input type="file">
+
+2. 文本输入：<input type="text" placeholder="Chezijin">
+
+3. Radio按钮：<input type="radio">
+
+4. 提交按钮：<input type="submit" value="Submit">
+
+5. Checkbox按钮：<input type="checkbox">
+
+6. 范围输入：<input type="range" min="0" max="20" step="5">
 
 #### 表单元素工作原理：
 
@@ -1667,8 +1675,8 @@ url 输入：
 ```html
 <fieldset>
     <legend>一个小标题</legend>
-        <input type="password" name="secret">
-        <input type="submit">
+        <input type="password" name="secret">
+        <input type="submit">
 </fieldset>
 ```
 
@@ -1761,34 +1769,34 @@ div {
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>CSS Transforms and Transitions</title>
-	<style>
-		#box {
-			position: absolute;
-			top: 100px;
-			left: 100px;
-			width: 200px;
-			height: 200px;
-			background-color: red;
-			transition: transform 2s;
-			-webkit-transition: -webkit-transform 2s;
-			-moz-transition: -moz-transform 2s;
-			-o-transition: -o-transform 2s;
-			/* no IE support for transition until possibly IE 10 */
-		}
-		#box:hover {
-			transform: rotate(45deg);
-			-webkit-transform: rotate(45deg); /* Safari, Chrome, mobile Safari, and Android */
-			-moz-transform: rotate(45deg); /* Firefox */
-			-o-transform: rotate(45deg); /* Opera */
-			-ms-transform: rotate(45deg); /* IE 9 */
-		}
-	</style>
+    <meta charset="utf-8">
+    <title>CSS Transforms and Transitions</title>
+    <style>
+        #box {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            transition: transform 2s;
+            -webkit-transition: -webkit-transform 2s;
+            -moz-transition: -moz-transform 2s;
+            -o-transition: -o-transform 2s;
+            /* no IE support for transition until possibly IE 10 */
+        }
+        #box:hover {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg); /* Safari, Chrome, mobile Safari, and Android */
+            -moz-transform: rotate(45deg); /* Firefox */
+            -o-transform: rotate(45deg); /* Opera */
+            -ms-transform: rotate(45deg); /* IE 9 */
+        }
+    </style>
 </head>
 <body>
-	<div id="box"> 
-	</div>
+    <div id="box"> 
+    </div>
 </body>
 </html>
 ```
@@ -1865,10 +1873,6 @@ div {
 
 - 音频支持的功能与视频类似
 
-
-
-
-
 ## 总结
 
 - 最重要的就是Box模型 Flow模型 Cascading的含义 Selectors的选择原则，其次是伪类等基本概念及一些基本结构体，最后是整本书都在灌输的高扩展性的设计理念
@@ -1880,5 +1884,3 @@ div {
 - 好在读完这本书并伴随着从焦虑的找工作任务中得到了解放，我找到了一点状态
 
 - 人生天地间，忽如他乡客，他乡他乡，何处是故乡？开卷见故乡
-
-
