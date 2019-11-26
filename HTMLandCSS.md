@@ -759,6 +759,23 @@ p.class1 {
 }
 ```
 
+### border
+
+- CSS中，`border-radius`属性设置为百分数，以边框高度x百分数来作为圆角的半径
+
+```css
+/*
+    得到一个圆形边框
+*/
+
+#border {
+    border：10px black solid;
+    border-radius: 50%
+}
+```
+
+
+
 ### 混合样式表
 
 - 在HTML中可以制定多个样式表，各种样式表从上到下排列，最下面的样式表最优先
@@ -1037,6 +1054,18 @@ body {
 - 找到一个赢家
 
 - 如果没有找到包含特定属性声明的规则，那么就去查找其父类
+
+**注意：**
+
+- 行内样式：`<style="color: white">` 会覆盖所有选择器样式，是第二强硬的定义样式方法
+
+- 最强硬的定义样式方法：在选择器具体属性后面加`!important`
+
+```css
+h1 {
+    color: pink !important;
+}
+```
 
 ## 布局与定位
 
@@ -1531,7 +1560,7 @@ li {
 
 - 如果增加一个布尔属性 checked 浏览器显示表单的时候就会默认选中这个元素
 
-- 用`<label>`元素添加标签，提高可访问性
+- 用`<label>`元素添加标签，提高可访问性：用`<label></label>`包裹整个`<input>`元素
 
 - ```html
   <input type="radio" name="hotornot" value="hot" id="option1">
@@ -1872,6 +1901,14 @@ div {
 ```
 
 - 音频支持的功能与视频类似
+
+## 开源框架
+
+- Bootstrap
+  
+  - [Bootstrap 官方网站](https://v3.bootcss.com/)
+  
+  - 适用于开发响应式布局、移动设备优先的 WEB 项目
 
 ## 总结
 
