@@ -77,7 +77,7 @@ nslookup
 - World Wide Web 是分布式超媒体（hypermedia）系统，它是超文本（hypertext）系统的扩充。
 - 一个 ht 由多个信息源链接组成，利用一个连接可以使用户找到另一个文档，这些文档可以位于世界上任何一个接在因特网上的超文本系统中。超文本是万维网的基础
 - 超媒体与超文本的区别是文档内容不同。超文本文档仅包含文本信息，而超媒体文档还包含其他表示方式的信息，如图形，图像，声音，动画甚至活动视频图像。
- 
+
 **统一资源定位符URL（Unit Resource Locator）**
 
 - URL 给资源的位置提供了一种抽象的识别方法，并用这种方法给资源定位
@@ -98,6 +98,7 @@ nslookup
 主机:主机是存放资源的主机在因特网中的域名
 * 端口和路径有时可以省略，默认端口80，默认路径可设置
 ```
+
 **万维网的工作过程**
 
 ```shell
@@ -271,10 +272,10 @@ CGI程序严格意义上是是CGI脚本（script）
 - 4 DHCP客户从几个DHCP服务器中选择其中的一个，并向所选择的DHCP服务器发送DHCP请求报文
 - 5 被选择的DHCP服务器发送确认报文DHCPACK，进入已绑定状态，并可以开始使用得到的临时IP地址了
 - 6 DHCP Client 现在要根据服务器提供的租用期T设置两个计时器 T1（0.5T） 和 T2（0.875T）
--   租用期达到 T1 ，DHCP CLient 发送请求报文 DHCPREQUEST 要求更新租用期
+- 租用期达到 T1 ，DHCP CLient 发送请求报文 DHCPREQUEST 要求更新租用期
 - 7 DHCP Server 若同意，则发回确认报文DHCPACK。DHCP Client 得到了新的租用期，重新设置计时器
 - 8 DHCP Server 若不同意，则发回确认报文 DHCPNACK 这时DHCP客户必须立即停止使用原来的IP地址，并且回到步骤2 重新申请IP地址
--   若 DHCP Server 不响应步骤 6 的请求报文 DHCPREQUEST，则在租用期达到 T2 时， DHCP Client 必须重新发送请求报文 DHCPREQUEST（重复步骤 6 ）
+- 若 DHCP Server 不响应步骤 6 的请求报文 DHCPREQUEST，则在租用期达到 T2 时， DHCP Client 必须重新发送请求报文 DHCPREQUEST（重复步骤 6 ）
 - 9 DHCP Client 可随时提前终止 Server 所提供的租用期，这时只需要向 DHCP 服务器发送释放报文 DHCPRELEASE 即可
 
 **DHCP(Dynamic Host Configuration Protocol)工作过程图解**
